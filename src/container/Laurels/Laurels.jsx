@@ -1,8 +1,3 @@
-import { getAllByAltText } from '@testing-library/react';
-import React from 'react';
-import { GiHeron } from 'react-icons/gi';
-import { MdFunctions, MdOutlineStayCurrentLandscape } from 'react-icons/md';
-
 import { SubHeading } from '../../components'
 import { images, data } from '../../constants'
 import './Laurels.css';
@@ -22,8 +17,16 @@ const Laurels = () => (
     <div className="app__wrapper_info">
       <SubHeading title='Awards and Recognition'/>
       <h1 className='headtext__cormorant'>Our Laurels</h1>
-      <p></p>
       
+      <div className="app__laurels_awards">
+        {
+          data.awards.map((award) => <AwardCard award={award} key={award.title}/>)
+        }
+      </div>
+    </div>
+
+    <div className="app__wrapper_img">
+        <img src={images.laurels} alt="" />
     </div>
   </div>
 
